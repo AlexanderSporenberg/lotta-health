@@ -33,7 +33,7 @@
       var msg = form.querySelector(".form-msg");
       if (!form.checkValidity()) { form.reportValidity(); return; }
       form.querySelectorAll("input, button").forEach(function (el) { el.disabled = true; });
-      if (msg) { msg.hidden = false; msg.textContent = "Danke. Wir melden uns, sobald Lotta für dich startet."; }
+      if (msg) { msg.hidden = false; msg.textContent = "Danke. Wir melden uns bei dir, sobald Termine frei sind."; }
     });
   });
 
@@ -133,10 +133,10 @@
       var headline, text;
       if (share >= 0.5) {
         headline = "Deine Beschwerden belasten dich deutlich.";
-        text = "Das musst du nicht aushalten. Sprich mit deiner Gynäkologin oder deinem Hausarzt darüber und nimm diese Auswertung mit. Lotta kann dich danach im Alltag begleiten.";
+        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lotta Navigation Session. Nimm diese Auswertung mit.";
       } else if (share >= 0.2) {
         headline = "Du spürst einige typische Veränderungen.";
-        text = "Viele Frauen erleben genau das. Mit Wissen, kleinen Routinen und guter ärztlicher Begleitung lässt sich oft viel verbessern. Lotta zeigt dir, wo du anfangen kannst.";
+        text = "Viele Frauen erleben genau das. Mit guter ärztlicher Einordnung, Schlaf, Training und den passenden Routinen lässt sich oft viel bewegen. In der Navigation Session finden wir heraus, wo du ansetzt.";
       } else {
         headline = "Im Moment belastet dich wenig.";
         text = "Schön. Wenn sich etwas verändert, mach den Check einfach noch einmal. Wissen vorab hilft, Veränderungen früh einzuordnen.";
@@ -155,7 +155,7 @@
         '<div class="result-bars">' + bars + "</div>" +
         "<p>" + cycleNote + "</p>" +
         '<p class="note">Dieser Check ist eine Orientierung und keine Diagnose. Deine Antworten bleiben in deinem Browser und werden nicht gespeichert oder übertragen. Bei starken, neuen oder ungewöhnlichen Beschwerden (zum Beispiel Blutungen nach der Menopause) geh bitte zeitnah in eine Praxis.</p>' +
-        '<div class="btn-row"><a class="btn" href="programm.html">So begleitet dich Lotta</a>' +
+        '<div class="btn-row"><a class="btn" href="ablauf.html#navigation-session">So geht es weiter</a>' +
         '<button type="button" class="btn btn-ghost" data-restart>Check neu starten</button></div>';
       root.querySelector("#q-title").focus();
       root.querySelector("[data-restart]").addEventListener("click", function () {
