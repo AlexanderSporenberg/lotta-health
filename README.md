@@ -9,6 +9,7 @@ Page structure and feature set are modeled on frieda.health; all copy, design an
 npm run build   # builds src/ into dist/
 npm run check   # build, then check internal links, anchors, no en/em dashes
 npm run serve   # http://localhost:8080
+npm start       # production server (server.mjs) on $PORT, used by Railway
 ```
 
 No dependencies. Plain HTML, CSS and a small vanilla JS file.
@@ -28,6 +29,11 @@ No dependencies. Plain HTML, CSS and a small vanilla JS file.
 | `auf-rezept.html` | Planned DiGA flow: prescription, health insurer, activation code |
 | `fachkreise.html` | Info for doctors |
 | `ueber-uns.html`, `faq.html`, `impressum.html`, `datenschutz.html`, `404.html` | |
+
+## Deploy
+
+Railway builds with `npm run build` and runs `npm start`. Until launch the server sends
+`X-Robots-Tag: noindex` and a disallow-all `robots.txt`; set `INDEXING=on` to allow search engines.
 
 ## Open before launch
 
