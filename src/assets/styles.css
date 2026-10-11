@@ -131,8 +131,9 @@ p { margin: 0 0 1em; }
 
 /* Trust bar */
 .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
-.trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 32px; padding: 22px 0; font-size: 0.93rem; color: var(--muted); }
-.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 32px; padding-block: 22px; font-size: 0.93rem; color: var(--muted); }
+.trust-row > span { display: block; }
+.trust-row b { margin-right: 4px; }
 .trust-row b { color: var(--plum); font-weight: 600; }
 
 /* Cards & grids */
@@ -282,3 +283,6 @@ textarea { border-radius: var(--radius-sm); width: 100%; min-height: 120px; }
 @media (max-width: 860px) { .module { grid-template-columns: 1fr; gap: 16px; } }
 .module .phase-note { font-size: 0.93rem; background: var(--sand); border-radius: var(--radius-sm); padding: 12px 16px; margin-top: 12px; }
 [id] { scroll-margin-top: 90px; }
+
+.checklist + p { margin-top: 16px; }
+@media print { .site-header, .site-footer, .check-nav, .btn-row, .skip { display: none !important; } .check { box-shadow: none; } }

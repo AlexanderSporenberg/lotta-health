@@ -133,7 +133,7 @@
       var headline, text;
       if (share >= 0.5) {
         headline = "Deine Beschwerden belasten dich deutlich.";
-        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lotta Navigation Session. Nimm diese Auswertung mit.";
+        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lotta Navigation Session. Speichere dir diese Auswertung und nimm sie mit.";
       } else if (share >= 0.2) {
         headline = "Du spürst einige typische Veränderungen.";
         text = "Viele Frauen erleben genau das. Mit guter ärztlicher Einordnung, Schlaf, Training und den passenden Routinen lässt sich oft viel bewegen. In der Navigation Session finden wir heraus, wo du ansetzt.";
@@ -156,8 +156,10 @@
         "<p>" + cycleNote + "</p>" +
         '<p class="note">Dieser Check ist eine Orientierung und keine Diagnose. Deine Antworten bleiben in deinem Browser und werden nicht gespeichert oder übertragen. Bei starken, neuen oder ungewöhnlichen Beschwerden (zum Beispiel Blutungen nach der Menopause) geh bitte zeitnah in eine Praxis.</p>' +
         '<div class="btn-row"><a class="btn" href="ablauf.html#navigation-session">So geht es weiter</a>' +
+        '<button type="button" class="btn btn-ghost" data-print>Drucken oder als PDF speichern</button>' +
         '<button type="button" class="btn btn-ghost" data-restart>Check neu starten</button></div>';
       root.querySelector("#q-title").focus();
+      root.querySelector("[data-print]").addEventListener("click", function () { window.print(); });
       root.querySelector("[data-restart]").addEventListener("click", function () {
         step = 0; answers = {}; render();
       });
