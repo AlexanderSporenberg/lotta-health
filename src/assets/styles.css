@@ -286,3 +286,5 @@ textarea { border-radius: var(--radius-sm); width: 100%; min-height: 120px; }
 
 .checklist + p { margin-top: 16px; }
 @media print { .site-header, .site-footer, .check-nav, .btn-row, .skip { display: none !important; } .check { box-shadow: none; } }
+#check { scroll-margin-top: 90px; }
+.review-marker { padding: 0 0 8px; margin-top: -48px; }

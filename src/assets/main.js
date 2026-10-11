@@ -154,11 +154,14 @@
         "<p>" + text + "</p>" +
         '<div class="result-bars">' + bars + "</div>" +
         "<p>" + cycleNote + "</p>" +
+        (sums.seele / max.seele >= 0.6 ? '<p><strong>Wenn du Gedanken hast, nicht mehr leben zu wollen:</strong> Bitte hol dir sofort Hilfe, über die 112 oder die Telefonseelsorge 0800 111 0 111 (kostenfrei, rund um die Uhr).</p>' : "") +
+        '<p class="muted">Stand: ' + new Date().toLocaleDateString("de-DE") + "</p>" +
         '<p class="note">Dieser Check ist eine Orientierung und keine Diagnose. Deine Antworten bleiben in deinem Browser und werden nicht gespeichert oder übertragen. Bei starken, neuen oder ungewöhnlichen Beschwerden (zum Beispiel Blutungen nach der Menopause) geh bitte zeitnah in eine Praxis.</p>' +
         '<div class="btn-row"><a class="btn" href="ablauf.html#navigation-session">So geht es weiter</a>' +
         '<button type="button" class="btn btn-ghost" data-print>Drucken oder als PDF speichern</button>' +
         '<button type="button" class="btn btn-ghost" data-restart>Check neu starten</button></div>';
-      root.querySelector("#q-title").focus();
+      root.scrollIntoView({ block: "start" });
+      root.querySelector("#q-title").focus({ preventScroll: true });
       root.querySelector("[data-print]").addEventListener("click", function () { window.print(); });
       root.querySelector("[data-restart]").addEventListener("click", function () {
         step = 0; answers = {}; render();
