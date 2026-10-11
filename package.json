@@ -1,0 +1,13 @@
+{
+  "name": "lotta-health-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketing website for Lotta Health (Frag Lotte)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs && node check.mjs",
+    "serve": "node build.mjs && npx --yes http-server dist -p 8080"
+  }
+}
