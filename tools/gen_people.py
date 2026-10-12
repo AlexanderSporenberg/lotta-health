@@ -18,6 +18,10 @@ SPEC = {
     "phase2": dict(skin=SK["light"], hair_c=HC["silver"], style="bun", top="#8fae8d", bg=SG, bare=True, older=True, glasses=True, eyes="smile", tilt=3),
     "story3": dict(skin=SK["fair"], hair_c=HC["silver"], style="short", top="#f0a27f", bg=LV, eyes="smile", mouth="open", older=True, glasses=True, earring=True, prop_kind="dumbbell", tilt=-3),
 }
+base = dict(SPEC["story1"], bare=True)
+SPEC["journey1"] = dict(base, eyes="open", mouth="open", prop_kind=None, tilt=-3)
+SPEC["journey2"] = dict(base, eyes="open", mouth="smile", prop_kind="book", tilt=2)
+SPEC["journey3"] = dict(base, eyes="smile", mouth="open", prop_kind=None, tilt=-2)
 for k in ["story2", "story3", "lead", "board1", "board2", "board3", "story1"]:
     SPEC[k + "-bare"] = dict(SPEC[k], bare=True)
 for name, a in SPEC.items():

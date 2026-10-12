@@ -816,3 +816,18 @@ body { font-size: 17.5px; }
 .card, .bento-item, .board-item, .story { transition: transform .25s ease, box-shadow .25s ease; }
 .card:hover, .bento-item:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(58,35,64,.10); }
 @media (prefers-reduced-motion: reduce) { .card, .bento-item { transition: none; } .card:hover, .bento-item:hover { transform: none; } }
+/* Round 7: overlap fixes */
+@media (min-width: 861px) { .hero-art .chat-float { left: -24px; bottom: -44px; } }
+.hero-cluster.rect .hc2 { bottom: auto; top: 0; right: auto; left: -40px; }
+.hero-cluster.rect .hc1 { top: auto; bottom: 30px; left: -50px; }
+.hero-cluster .hc-arch.trio { align-items: flex-end; padding: 0 10px; }
+.hero-cluster .hc-arch.trio img { width: 130px; margin: 0 -18px -6px; }
+.hero-cluster .hc-arch.trio img:nth-child(2) { width: 150px; }
+.hero-cluster:has(.trio) .hc1 { top: 30px; left: -40px; }
+.hero-cluster:has(.trio) .hc2 { top: 100px; bottom: auto; right: auto; left: -60px; }
+.hero-cluster:has(.trio) .hc-badge { right: 6px; }
+@media (max-width: 700px) {
+  .press-row { padding: 0 16px; font-size: .82em; }
+  .press-row > :last-child { display: none; }
+}
+.hero-cluster.rect .hc1 { bottom: 0; left: -100px; }
