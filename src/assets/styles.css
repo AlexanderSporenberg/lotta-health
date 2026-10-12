@@ -668,3 +668,59 @@ body { font-size: 17.5px; }
   .timeline.horizontal li { padding: 36px 0 0; }
   .timeline.horizontal li::before { left: 0; top: 0; }
 }
+
+/* App section v3: feature list + one large phone */
+.app-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.app-copy .lead { color: #d9c9d6; }
+.feats { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 10px; }
+.feat { width: 100%; display: flex; gap: 16px; align-items: center; text-align: left; background: transparent; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 14px 18px; color: #d9c9d6; font: inherit; cursor: pointer; transition: background .2s, border-color .2s; }
+.feat b { display: block; color: var(--cream); font-family: var(--serif); font-weight: 500; font-size: 1.2rem; }
+.feat img { flex: 0 0 52px; background: var(--cream); border-radius: 50%; }
+.feat:hover { border-color: rgba(240,162,127,.6); }
+.feat.on { background: rgba(255,255,255,.08); border-color: var(--apricot); }
+.app-stage { position: relative; display: grid; place-items: center; min-height: 640px; }
+.stage-glow { position: absolute; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, rgba(240,162,127,.45), rgba(240,162,127,0) 68%); }
+.phone.big { position: relative; width: 310px; max-width: 310px; aspect-ratio: 9 / 19; padding: 0; border-radius: 48px; border: 10px solid #1d1220; box-shadow: 0 40px 80px rgba(0,0,0,.4); font-size: 12.5px; }
+.phone.big .notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 92px; height: 24px; border-radius: 14px; background: #1d1220; z-index: 3; }
+.screen { position: absolute; inset: 0; padding: 14px 18px 70px; opacity: 0; transition: opacity .45s ease, transform .45s ease; transform: translateY(8px); }
+.screen.on { opacity: 1; transform: none; }
+.phone.big .ph-art { margin: 6px -18px 14px; height: 150px; border-radius: 0 0 28px 28px; }
+.phone.big .ph-art img { height: 130px; }
+.phone.big .ph-title { font-size: 22px; }
+.phone.big .ph-btn, .phone.big .ph-tabbar { bottom: 16px; }
+.phone.big .ph-tabbar { bottom: 0; }
+.float-card { position: absolute; z-index: 4; display: flex; align-items: center; gap: 12px; background: var(--white); color: var(--ink); border-radius: 18px; padding: 12px 16px; box-shadow: 0 16px 40px rgba(0,0,0,.25); font-size: .9rem; }
+.float-card small { display: block; color: var(--muted); font-size: .75rem; }
+.float-card b { color: var(--plum); }
+.fc-dot { width: 34px; height: 34px; border-radius: 50%; }
+.fc-dot.sage { background: var(--sage-tint); box-shadow: inset 0 0 0 8px var(--sage); }
+.fc-dot.apricot { background: var(--blush); box-shadow: inset 0 0 0 8px var(--apricot); }
+.fc1 { top: 90px; left: -10px; animation: bob 6s ease-in-out infinite; }
+.fc2 { bottom: 110px; right: -10px; animation: bob 6s ease-in-out 3s infinite; }
+@keyframes bob { 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .float-card { animation: none; } .screen { transition: none; } }
+@media (max-width: 960px) {
+  .app-split { grid-template-columns: 1fr; gap: 40px; }
+  .app-stage { min-height: 560px; }
+  .phone.big { width: 270px; }
+  .fc1 { left: 0; top: 40px; } .fc2 { right: 0; bottom: 60px; }
+  .feat { padding: 12px 14px; }
+}
+.arch img.photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.arch:has(.photo) { width: 260px; aspect-ratio: 4 / 5; border-radius: 130px 130px 24px 24px; overflow: hidden; box-shadow: var(--elev); border: 6px solid var(--white); }
+
+/* Round 3: inner hero grid fix (text column + art column) */
+.page-hero.has-art .wrap { grid-template-columns: minmax(0, 1fr) 340px; column-gap: 56px; }
+.page-hero.has-art .wrap > :not(.page-hero-art) { grid-column: 1; }
+.page-hero.has-art .page-hero-art { grid-column: 2; grid-row: 1 / span 6; width: 340px; height: 340px; align-self: center; }
+@media (max-width: 860px) {
+  .page-hero.has-art .wrap { grid-template-columns: 1fr; }
+  .page-hero.has-art .page-hero-art { grid-column: 1; grid-row: auto; order: -1; width: 180px; height: 180px; }
+}
+/* mobile hero chat card */
+@media (max-width: 860px) {
+  .chat-float { position: relative; left: auto; width: calc(100% - 32px); max-width: 360px; margin: -48px auto 0; }
+}
+/* symptom check progress minimum */
+.progress > span, .progress-bar > span { min-width: 9%; }
+.page-hero.has-art .page-hero-art { grid-row: 1; }

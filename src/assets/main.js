@@ -170,3 +170,21 @@
     }
   }
 })();
+
+// App section: feature tabs switch the phone screen, with a gentle auto-rotate.
+(function () {
+  var list = document.querySelector("[data-app-tabs]");
+  if (!list) return;
+  var btns = list.querySelectorAll(".feat");
+  var screens = document.querySelectorAll(".app-stage .screen");
+  var current = 0, timer = null;
+  function show(i) {
+    current = i;
+    btns.forEach(function (b, j) { b.classList.toggle("on", j === i); b.setAttribute("aria-pressed", j === i ? "true" : "false"); });
+    screens.forEach(function (s, j) { s.classList.toggle("on", j === i); });
+  }
+  btns.forEach(function (b, i) { b.addEventListener("click", function () { clearInterval(timer); show(i); }); });
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    timer = setInterval(function () { show((current + 1) % btns.length); }, 4500);
+  }
+})();
