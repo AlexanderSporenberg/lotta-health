@@ -47,7 +47,7 @@ def hair_shape(style, c, part):
 def face(skin, eyes, mouth, older, brows_c):
     ck = shade(skin, .9)
     p = [f'<path d="M66 94c0-28 15-44 36-44s34 16 34 44c0 28-14 46-35 46S66 122 66 94z" fill="{skin}"/>',
-         f'<path d="M70 112c8 18 20 26 32 26 8 0 16-4 22-10-10 2-30 0-54-16z" fill="{ck}" opacity=".6"/>',
+         f'<path d="M70 112c8 18 20 26 32 26 8 0 16-4 22-10-10 2-30 0-54-16z" fill="{ck}" opacity=".35"/>',
          f'<ellipse cx="66" cy="100" rx="5.5" ry="8" fill="{skin}"/><ellipse cx="136" cy="100" rx="5.5" ry="8" fill="{skin}"/>',
          f'<ellipse cx="82" cy="110" rx="7.5" ry="5" fill="{APRICOT}" opacity=".4"/><ellipse cx="122" cy="110" rx="7.5" ry="5" fill="{APRICOT}" opacity=".4"/>']
     if eyes == "smile":
@@ -70,9 +70,13 @@ def face(skin, eyes, mouth, older, brows_c):
 
 def prop(kind, skin, top):
     if kind == "tea":
-        return (f'<path d="M76 196c0-14 8-22 18-24h12c10 2 18 10 18 24z" fill="{skin}"/>'
-                f'<rect x="86" y="160" width="30" height="30" rx="7" fill="{CREAM}" stroke="{PLUM}" stroke-width="2"/><path d="M116 168c10 0 10 14 0 14" {LINE} stroke-width="2"/>'
-                f'<path d="M94 154c-3-5 3-8 0-14M106 154c-3-5 3-8 0-14" {LINE} stroke-width="1.6" opacity=".55"/>')
+        hand = shade(skin, .96)
+        return (f'<g transform="translate(0 -6)"><path d="M84 160h34v30c0 9-7 14-17 14s-17-5-17-14z" fill="{CREAM}" stroke="{PLUM}" stroke-width="2"/>'
+                f'<ellipse cx="101" cy="160" rx="17" ry="4.5" fill="{shade(CREAM, .86)}" stroke="{PLUM}" stroke-width="2"/>'
+                f'<path d="M89 176h24" stroke="{APRICOT}" stroke-width="5" stroke-linecap="round"/>'
+                f'<path d="M66 214c2-16 8-30 22-34 6-2 10 4 8 10l-4 12c-2 6-4 10-4 14z" fill="{hand}" stroke="none"/>'
+                f'<path d="M136 214c-2-16-8-30-22-34-6-2-10 4-8 10l4 12c2 6 4 10 4 14z" fill="{hand}" stroke="none"/>'
+                f'<path d="M86 184q-6 2-6 8M116 184q6 2 6 8" {LINE} stroke="{shade(skin, .75)}" stroke-width="1.4"/></g>')
     if kind == "book":
         return (f'<path d="M70 200l30-34 30 34z" fill="{skin}"/><path d="M66 176l34 8 34-8v24l-34 8-34-8z" fill="{APRICOT}" stroke="{PLUM}" stroke-width="2"/>'
                 f'<path d="M100 184v24" stroke="{PLUM}" stroke-width="2"/>')
@@ -93,7 +97,7 @@ def portrait(name, skin, hair_c, style, top, bg, eyes="open", mouth="smile", old
          "" if bare else f'<path d="M150 40a30 30 0 0 1 22 22" {LINE} stroke="#fff" stroke-width="6" opacity=".6"/>',
          f'<g transform="rotate({tilt} 100 120)">', hair_shape(style, hair_c, "back"),
          f'<path d="M26 240c0-58 32-92 74-92s74 34 74 92z" fill="{top}" stroke="{PLUM}" stroke-width="2"/>',
-         f'<path d="M88 126v22c6 10 20 10 26 0v-22z" fill="{shade(skin, .9)}"/>']
+         f'<path d="M88 126v22c6 10 20 10 26 0v-22z" fill="{shade(skin, .9)}" stroke="none"/>']
     if collar:
         p.append(f'<path d="M72 154l28 30 28-30-10-8-18 20-18-20z" fill="#fff" stroke="{PLUM}" stroke-width="2"/>')
     else:
