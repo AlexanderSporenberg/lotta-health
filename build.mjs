@@ -35,6 +35,8 @@ function parseMeta(html, file) {
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 cpSync(join(src, "assets"), join(out, "assets"), { recursive: true });
+// Standalone redesign drafts live in src/v2 and are copied as they are.
+cpSync(join(src, "v2"), join(out, "v2"), { recursive: true });
 
 const pages = readdirSync(join(src, "pages")).filter((f) => f.endsWith(".html"));
 for (const file of pages) {
