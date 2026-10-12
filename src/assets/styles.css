@@ -417,3 +417,5 @@ h1, h2, h3 { font-weight: 500; }
 .todo { color: #5a4600; }
 .press-row.logos { display: grid; grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 640px) { .press-row.logos { grid-template-columns: repeat(2, 1fr); } .press-logo { flex-basis: 40%; } }
+.hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); max-width: 11em; }
+.hero .lead { font-size: 1.25rem; max-width: 26em; }
