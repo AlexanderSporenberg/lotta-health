@@ -35,15 +35,27 @@ fig = P.portrait("hero-fig", skin="#eec09d", hair_c="#a5503a", style="long", top
                  eyes="closed", earring=True, prop_kind="tea", tilt=-4, bare=True)
 fig = re.sub(r'^<svg[^>]*>', '<svg x="40" y="118" width="440" height="462" viewBox="0 0 200 210" overflow="visible">', fig)
 leaf = lambda x, y, r, c: f'<ellipse cx="{x}" cy="{y}" rx="16" ry="40" transform="rotate({r} {x} {y})" fill="{c}"/><path d="M{x} {y+36}V{y-36}" transform="rotate({r} {x} {y})" stroke="#3a2340" stroke-width="1.6" opacity=".35"/>'
-hero = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" role="img" aria-label="Illustration einer Frau mit einer Tasse Tee, entspannt und zuversichtlich">',
+hero = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" overflow="visible" role="img" aria-label="Illustration einer Frau mit einer Tasse Tee im Sessel am Fenster, entspannt und zuversichtlich">',
         '<defs>' + P.grain("hg") + '<clipPath id="arch"><path d="M40 560V260C40 136 138 40 260 40s220 96 220 220v300z"/></clipPath></defs>',
         '<path d="M40 560V260C40 136 138 40 260 40s220 96 220 220v300z" fill="#f6c7b4"/>',
         '<path d="M40 560V260C40 136 138 40 260 40s220 96 220 220v300z" fill="#f6c7b4" filter="url(#hg)"/>',
         '<g clip-path="url(#arch)"><circle cx="352" cy="150" r="52" fill="#f0a27f"/><path d="M40 470c90-40 170-20 260-50s140-10 180 0v190H40z" fill="#e9d2c4"/></g>',
         '<path d="M120 120a26 26 0 1 0 22 40 20 20 0 0 1-22-40z" fill="#fbf6f0"/>',
-        leaf(60, 430, -28, "#a9bfa8"), leaf(92, 400, -6, "#8fae8d"), leaf(48, 372, -44, "#a9bfa8"), leaf(470, 420, 26, "#a9bfa8"), leaf(450, 380, 8, "#8fae8d"),
-        '<path d="M78 560c-4-60 0-120 14-180M462 560c2-50-2-100-12-150" stroke="#3a2340" stroke-width="2" fill="none" stroke-linecap="round"/>',
+        leaf(60, 430, -28, "#a9bfa8"), leaf(92, 400, -6, "#8fae8d"), leaf(48, 372, -44, "#a9bfa8"),
+        '<path d="M78 560c-4-60 0-120 14-180" stroke="#3a2340" stroke-width="2" fill="none" stroke-linecap="round"/>',
+        # window mullions in the arch, armchair behind the figure, side table with plant and book
+        '<g clip-path="url(#arch)"><path d="M260 40v250M70 200h380" stroke="#fbf6f0" stroke-width="10" opacity=".55"/>'
+        '<rect x="40" y="290" width="440" height="14" fill="#fbf6f0" opacity=".7"/>'
+        '<path d="M120 560V400c0-60 50-96 140-96s140 36 140 96v160z" fill="#8fae8d"/>'
+        '<path d="M120 560V400c0-60 50-96 140-96s140 36 140 96v160z" fill="#8fae8d" filter="url(#hg)"/>'
+        '<path d="M150 330c30-16 70-22 110-22s80 6 110 22" stroke="#3a2340" stroke-width="2" fill="none" opacity=".25"/></g>',
         "<g clip-path=\"url(#arch)\">" + fig + "</g>",
+        '<g clip-path="url(#arch)"><rect x="90" y="470" width="70" height="90" rx="26" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/>'
+        '<rect x="360" y="470" width="70" height="90" rx="26" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/></g>',
+        '<rect x="400" y="470" width="96" height="10" rx="5" fill="#3a2340"/><path d="M412 480v80M484 480v80" stroke="#3a2340" stroke-width="4"/>',
+        '<path d="M418 470l6-30h44l6 30z" fill="#f0a27f" stroke="#3a2340" stroke-width="2"/>',
+        leaf(436, 410, -20, "#8fae8d"), leaf(456, 404, 18, "#a9bfa8"), leaf(446, 396, 0, "#8fae8d"),
+        '<rect x="404" y="456" width="40" height="8" rx="2" fill="#efe7f3" stroke="#3a2340" stroke-width="1.6" transform="rotate(-4 424 460)"/>',
         '<g stroke="#3a2340" stroke-width="2.2" stroke-linecap="round"><path d="M420 250v22M409 261h22"/><path d="M180 96v16M172 104h16"/></g>',
         '</svg>']
 with open(os.path.join(OUT, "hero.svg"), "w") as f:
