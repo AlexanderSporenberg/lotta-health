@@ -419,3 +419,27 @@ h1, h2, h3 { font-weight: 500; }
 @media (max-width: 640px) { .press-row.logos { grid-template-columns: repeat(2, 1fr); } .press-logo { flex-basis: 40%; } }
 .hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); max-width: 11em; }
 .hero .lead { font-size: 1.25rem; max-width: 26em; }
+
+/* Calmer middle section */
+.todo { display: none; }
+html.review .todo { display: inline; }
+.phases-simple .phase { text-decoration: none; color: inherit; padding: 36px; transition: border-color 0.15s ease; }
+.phases-simple .phase:hover { border-color: var(--apricot); }
+.phases-simple .phase h3 { font-size: 1.6rem; }
+.phase .more { margin-top: auto; font-weight: 600; color: var(--plum); }
+.steps .step { text-align: left; }
+.trust-row { justify-content: center; gap: 18px 56px; }
+.phone-wrap figcaption { font-size: 0.9rem; }
+.sample { display: inline-block; vertical-align: middle; margin-left: 6px; font: 600 0.68rem/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 8px; background: var(--white); }
+.avatar.img, .portrait { overflow: hidden; padding: 0; }
+.avatar.img svg, .portrait svg { width: 100%; height: 100%; }
+.portrait { border-color: var(--apricot-soft); }
+.press-logo { border: 0; color: #9d8f98; }
+.press-logo.w1 { font-family: var(--serif); font-style: italic; font-size: 1.5rem; }
+.press-logo.w2 { font-family: var(--sans); font-weight: 800; letter-spacing: 0.08em; }
+.press-logo.w3 { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; }
+.press-logo.w4 { font-family: var(--sans); font-weight: 600; font-size: 1.15rem; }
+.press-logo.w5 { font-family: var(--serif); letter-spacing: 0.3em; font-size: 1.05rem; }
+.portrait svg { stroke: none; }
+.todo.show { display: inline; }
+p.todo { display: none; } html.review p.todo { display: block; }

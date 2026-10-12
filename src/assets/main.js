@@ -1,5 +1,6 @@
 // Lotta Health: small progressive enhancements. Nothing here sends data anywhere.
 (function () {
+  if (/[?&]review/.test(location.search)) document.documentElement.classList.add("review");
   "use strict";
 
   // Mobile navigation
