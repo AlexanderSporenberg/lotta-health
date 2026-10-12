@@ -13,6 +13,9 @@ const head = partial("head");
 const header = partial("header");
 const footer = partial("footer");
 
+// Pages can pull in shared sections with <!-- include: name -->.
+const includes = (html) => html.replace(/<!--\s*include:\s*([\w-]+)\s*-->/g, (m, name) => partial(name).trim());
+
 // Each page starts with a meta comment:
 // <!-- title: ... | description: ... | nav: home -->
 const META = /^<!--\s*(.*?)\s*-->\s*/s;
@@ -48,7 +51,7 @@ ${head.replaceAll("{{title}}", meta.title).replaceAll("{{description}}", meta.de
 <body>
 ${navHeader}
 <main id="inhalt">
-${body.trim()}
+${includes(body.trim())}
 </main>
 ${footer.replaceAll("{{year}}", String(new Date().getFullYear()))}
 <script src="assets/main.js" defer></script>
