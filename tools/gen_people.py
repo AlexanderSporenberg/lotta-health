@@ -46,12 +46,12 @@ hero = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 560" overflow=
         # window mullions in the arch, armchair behind the figure, side table with plant and book
         '<g clip-path="url(#arch)"><path d="M260 40v250M70 200h380" stroke="#fbf6f0" stroke-width="10" opacity=".55"/>'
         '<rect x="40" y="290" width="440" height="14" fill="#fbf6f0" opacity=".7"/>'
-        '<path d="M120 560V400c0-60 50-96 140-96s140 36 140 96v160z" fill="#8fae8d"/>'
-        '<path d="M120 560V400c0-60 50-96 140-96s140 36 140 96v160z" fill="#8fae8d" filter="url(#hg)"/>'
-        '<path d="M150 330c30-16 70-22 110-22s80 6 110 22" stroke="#3a2340" stroke-width="2" fill="none" opacity=".25"/></g>',
+        '<path d="M92 560V380c0-70 60-110 168-110s168 40 168 110v180z" fill="#8fae8d" stroke="#3a2340" stroke-width="2"/>'
+        '<path d="M92 560V380c0-70 60-110 168-110s168 40 168 110v180z" fill="#8fae8d" filter="url(#hg)"/><path d="M128 300c-6 30-6 70-4 110M392 300c6 30 6 70 4 110" stroke="#3a2340" stroke-width="1.6" fill="none" opacity=".3"/>'
+        '</g>',
         "<g clip-path=\"url(#arch)\">" + fig + "</g>",
-        '<g clip-path="url(#arch)"><rect x="90" y="470" width="70" height="90" rx="26" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/>'
-        '<rect x="360" y="470" width="70" height="90" rx="26" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/></g>',
+        '<g clip-path="url(#arch)"><rect x="76" y="456" width="84" height="104" rx="30" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/>'
+        '<rect x="360" y="456" width="84" height="104" rx="30" fill="#a9bfa8" stroke="#3a2340" stroke-width="2"/></g>',
         '<rect x="400" y="470" width="96" height="10" rx="5" fill="#3a2340"/><path d="M412 480v80M484 480v80" stroke="#3a2340" stroke-width="4"/>',
         '<path d="M418 470l6-30h44l6 30z" fill="#f0a27f" stroke="#3a2340" stroke-width="2"/>',
         leaf(436, 410, -20, "#8fae8d"), leaf(456, 404, 18, "#a9bfa8"), leaf(446, 396, 0, "#8fae8d"),

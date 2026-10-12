@@ -860,3 +860,22 @@ body { font-size: 17.5px; }
 .hero-cluster .hc1 { left: -20px; }
 .hero-cluster.rect .hc1 { left: -20px; bottom: -20px; }
 .hero-cluster:has(.trio) .hc1, .hero-cluster:has(.trio) .hc2 { left: -20px; }
+/* Round 9: hero polish */
+.hero-talk .talk.lotte a { display: block; width: fit-content; }
+@media (min-width: 861px) {
+  .hero-talk .talk.me { top: -8px; left: 70px; }
+  .hero-talk .talk-lotte { left: -40px; bottom: -86px; }
+  .hero-art { padding-bottom: 60px; }
+}
+@media (max-width: 860px) { .hero-art { margin-top: 0 !important; } .hero { row-gap: 32px; } .hero-copy { margin-bottom: 0; } }
+.hero-cluster.rect .hc1 { bottom: -44px; }
+/* showroom */
+.showroom-grid { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 56px; align-items: center; }
+.showroom-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.showroom-photos figure { margin: 0; position: relative; border-radius: 22px; overflow: hidden; box-shadow: var(--elev); aspect-ratio: 4 / 3.4; }
+.showroom-photos .ph-wide { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+.showroom-photos img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.92) sepia(.06); }
+.showroom-photos figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(251,246,240,.92); color: var(--plum); font-size: .8rem; font-weight: 600; border-radius: 999px; padding: 4px 12px; }
+@media (max-width: 960px) { .showroom-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (min-width: 861px) { section.hero { padding-bottom: 130px; } .hero-talk .talk-lotte { bottom: -70px; } }
+@media (max-width: 860px) { section.hero .hero-copy { padding-bottom: 0; } section.hero .wrap { gap: 28px; } }
