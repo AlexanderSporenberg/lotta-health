@@ -855,3 +855,8 @@ body { font-size: 17.5px; }
 }
 @media (max-width: 860px) { .hero-talk { margin-top: 18px; } }
 .hero-talk .talk.lotte a { display: table; }
+/* shared floater rule: stay inside the art column */
+.hero-cluster .hc1, .hero-cluster .hc2 { max-width: 250px; }
+.hero-cluster .hc1 { left: -20px; }
+.hero-cluster.rect .hc1 { left: -20px; bottom: -20px; }
+.hero-cluster:has(.trio) .hc1, .hero-cluster:has(.trio) .hc2 { left: -20px; }
