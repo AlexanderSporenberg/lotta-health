@@ -18,6 +18,8 @@ SPEC = {
     "phase2": dict(skin=SK["light"], hair_c=HC["silver"], style="bun", top="#8fae8d", bg=SG, bare=True, older=True, glasses=True, eyes="smile", tilt=3),
     "story3": dict(skin=SK["fair"], hair_c=HC["silver"], style="short", top="#f0a27f", bg=LV, eyes="smile", mouth="open", older=True, glasses=True, earring=True, prop_kind="dumbbell", tilt=-3),
 }
+for k in ["story2", "story3", "lead", "board1"]:
+    SPEC[k + "-bare"] = dict(SPEC[k], bare=True)
 for name, a in SPEC.items():
     with open(os.path.join(OUT, name + ".svg"), "w") as f:
         f.write(P.portrait(name, **a))
