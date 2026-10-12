@@ -54,6 +54,42 @@
   .problem p { margin: 0; font-size: 1.125rem; color: var(--muted); max-width: 28em; }
   .rule { height: 1px; background: var(--line); margin: 0 0 28px; }
 
+  /* Focus areas in the hero: the four topics are named right under the CTA. */
+  .focus-line { list-style: none; margin: 40px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 28px; }
+  .focus-line a { font-size: .95rem; text-decoration: none; color: var(--green); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .focus-line a:hover, .focus-line a:focus-visible { border-color: var(--green); outline: none; }
+  .label { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Section 3: goals as four quiet cards, details stay folded until asked for. */
+  .goals { padding: 88px 0; }
+  .goals-head { margin-bottom: 40px; }
+  .goals-head h2 { font: 400 clamp(2rem, 6vw, 3.25rem)/1.12 var(--serif); color: var(--green); margin: 12px 0 0; max-width: 16em; }
+  .goal-grid { display: grid; gap: 16px; }
+  .goal { background: #fbf8f3; border: 1px solid var(--line); border-radius: 4px; scroll-margin-top: 24px; }
+  .goal summary { list-style: none; cursor: pointer; padding: 28px 28px 26px; display: grid; gap: 14px; position: relative; }
+  .goal summary::-webkit-details-marker { display: none; }
+  .goal summary:focus-visible { outline: 2px solid var(--green); outline-offset: -2px; }
+  .goal .num { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .goal q { quotes: none; font: 400 clamp(1.45rem, 4.4vw, 1.9rem)/1.22 var(--serif); color: var(--green); padding-right: 36px; }
+  .goal .more { font-size: .9rem; color: var(--muted); }
+  .goal summary::after { content: ""; position: absolute; right: 28px; top: 30px; width: 14px; height: 14px;
+    background: linear-gradient(var(--green), var(--green)) center / 14px 1.5px no-repeat, linear-gradient(var(--green), var(--green)) center / 1.5px 14px no-repeat; transition: transform .25s; }
+  .goal[open] summary::after { transform: rotate(45deg); }
+  .goal[open] .more { display: none; }
+  .goal-body { padding: 0 28px 28px; }
+  .goal-body p { margin: 0 0 14px; color: var(--muted); }
+  .goal-body ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .goal-body li { padding: 11px 0; border-bottom: 1px solid var(--line); }
+  @media (prefers-reduced-motion: reduce) { .goal summary::after { transition: none; } }
+
+  @media (min-width: 900px) {
+    .goals { padding: 140px 0; }
+    .goal-grid { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .goal summary { padding: 40px 40px 36px; min-height: 230px; align-content: space-between; }
+    .goal summary::after { right: 40px; top: 42px; }
+    .goal-body { padding: 0 40px 40px; }
+  }
+
   @media (min-width: 900px) {
     :root { --gutter: 48px; }
     .hero { padding: 40px 0 120px; }
@@ -77,6 +113,12 @@
         <h1>Frauengesundheit, die mit dir wächst.</h1>
         <p>Eine gynäkologische Privatpraxis in Berlin, die dich mit Zeit und einem persönlichen Plan durch alle Lebensphasen begleitet.</p>
         <a class="btn" id="anfrage" href="#anfrage">Erstgespräch anfragen</a>
+        <ul class="focus-line" aria-label="Schwerpunkte">
+          <li><a href="#zyklus">Zyklus &amp; Hormone</a></li>
+          <li><a href="#kinderwunsch">Kinderwunsch &amp; Mutterschaft</a></li>
+          <li><a href="#wechseljahre">Wechseljahre</a></li>
+          <li><a href="#praevention">Prävention &amp; Longevity</a></li>
+        </ul>
       </div>
       <figure style="margin:0">
         <div class="hero-photo"><img src="hero.jpg" alt="Heller Raum mit Pflanzen und Holzboden" width="314" height="400"></div>
@@ -94,6 +136,54 @@
       </div>
     </div>
   </section>
+
+  <section class="goals" aria-labelledby="goals-h">
+    <div class="wrap">
+      <div class="goals-head">
+        <span class="label">Unsere Schwerpunkte</span>
+        <h2 id="goals-h">Wobei wir dich begleiten.</h2>
+      </div>
+      <div class="goal-grid">
+        <details class="goal" id="zyklus">
+          <summary><span class="num">01 · Zyklus &amp; Hormone</span><q>Ich will verstehen, was mein Zyklus mir sagt.</q><span class="more">Mehr dazu</span></summary>
+          <div class="goal-body">
+            <p>Wir schauen genau hin, wenn sich dein Zyklus verändert oder Beschwerden bleiben.</p>
+            <ul><li>Zyklusbeschwerden</li><li>Verhütungsberatung</li><li>PCOS</li><li>Endometriose</li></ul>
+          </div>
+        </details>
+        <details class="goal" id="kinderwunsch">
+          <summary><span class="num">02 · Kinderwunsch &amp; Mutterschaft</span><q>Ich plane eine Familie und will gut vorbereitet sein.</q><span class="more">Mehr dazu</span></summary>
+          <div class="goal-body">
+            <p>Von der ersten Planung bis in die Zeit nach der Geburt.</p>
+            <ul><li>Präkonzeption</li><li>Schwangerschaftsplanung</li><li>Postpartum</li></ul>
+          </div>
+        </details>
+        <details class="goal" id="wechseljahre">
+          <summary><span class="num">03 · Wechseljahre</span><q>Ich will die Wechseljahre informiert und in Ruhe angehen.</q><span class="more">Mehr dazu</span></summary>
+          <div class="goal-body">
+            <p>Wir ordnen ein, was sich verändert, und entscheiden gemeinsam, was dir guttut.</p>
+            <ul><li>Perimenopause</li><li>Postmenopause</li><li>HRT-Beratung, fachärztlich begleitet</li></ul>
+          </div>
+        </details>
+        <details class="goal" id="praevention">
+          <summary><span class="num">04 · Prävention &amp; Longevity</span><q>Ich will heute für die nächsten Jahrzehnte vorsorgen.</q><span class="more">Mehr dazu</span></summary>
+          <div class="goal-body">
+            <p>Langfristige Gesundheit beginnt lange bevor etwas wehtut.</p>
+            <ul><li>Vorsorge</li><li>Ärztlich begleitete Gewichtsreduktion</li><li>Energie</li><li>Knochen und Herz</li></ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 </main>
+<script>
+  // A topic link in the hero opens its card.
+  document.querySelectorAll('.focus-line a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.querySelector(a.getAttribute('href'));
+      if (d) d.open = true;
+    });
+  });
+</script>
 </body>
 </html>
