@@ -117,6 +117,15 @@
   .member-foot { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; }
   .member-foot span { font-size: .9rem; color: var(--muted); }
 
+  /* Section: the digital companion between appointments. Text left, what it does right. */
+  .between { padding: 96px 0; border-top: 1px solid var(--line); }
+  .between-grid { display: grid; gap: 40px; }
+  .between h2 { font: 400 clamp(2rem, 5.6vw, 3.1rem)/1.14 var(--serif); letter-spacing: -.015em; margin: 18px 0 20px; color: var(--green); max-width: 12em; }
+  .between p { margin: 0 0 14px; color: var(--muted); max-width: 30em; }
+  .between ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .between li { padding: 16px 0; border-bottom: 1px solid var(--line); font: 400 1.2rem/1.35 var(--serif); color: var(--green); }
+  .between .note { margin-top: 20px; font-size: .9rem; }
+
   @media (min-width: 900px) {
     :root { --gutter: 56px; }
     .hero { padding: 88px 0 136px; }
@@ -133,6 +142,8 @@
     .path-head { grid-template-columns: 1fr 2fr; align-items: end; }
     .timeline { margin-left: 33.333%; }
     .member { padding: 152px 0; }
+    .between { padding: 152px 0; }
+    .between-grid { grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
     .member-head { grid-template-columns: 1fr 2fr; align-items: end; }
     .tiers { grid-template-columns: 1fr 1fr; margin-left: 33.333%; }
     .tier { padding: 40px 40px 0 0; }
@@ -205,7 +216,7 @@
           </div>
         </details>
         <details class="goal" id="wechseljahre">
-          <summary><span class="num">03</span><h3>Wechseljahre</h3><span class="voice">„Ich möchte die Wechseljahre informiert und gelassen angehen.“</span></summary>
+          <summary><span class="num">03 · Unser erstes Programm</span><h3>Wechseljahre</h3><span class="voice">„Ich möchte die Wechseljahre informiert und gelassen angehen.“</span></summary>
           <div class="goal-body">
             <p>Wir ordnen ein, was sich verändert, und entscheiden gemeinsam, was dir guttut.</p>
             <ul><li>Perimenopause</li><li>Postmenopause</li><li>HRT-Beratung, fachärztlich begleitet</li></ul>
@@ -252,6 +263,25 @@
           <p>Deine Ärztin schaut mit dir auf die letzten Wochen und entscheidet mit dir, wie es weitergeht. Danach seht ihr euch mindestens einmal im Jahr.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section class="between" aria-labelledby="between-h">
+    <div class="wrap between-grid">
+      <div>
+        <span class="label">Zwischen den Terminen · Bald verfügbar</span>
+        <h2 id="between-h">Dein Plan, auch im Alltag.</h2>
+        <p>Ein digitaler Begleiter führt dich durch deinen persönlichen Plan. Er stellt keine Diagnosen. Medizinische Entscheidungen trifft immer deine Ärztin.</p>
+      </div>
+      <div>
+        <ul>
+          <li>Antworten auf deine Fragen zum Plan</li>
+          <li>Atem- und Bewegungsübungen für zuhause</li>
+          <li>Rezeptideen, die zu deinem Alltag passen</li>
+          <li>Auf Wunsch mit den Daten deines Wearables</li>
+        </ul>
+        <p class="note">Nur mit deiner Zustimmung. Deine Daten gehören dir.</p>
+      </div>
     </div>
   </section>
 
