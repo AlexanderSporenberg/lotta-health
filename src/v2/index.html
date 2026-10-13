@@ -102,6 +102,21 @@
   .step p { margin: 4px 0 0; color: var(--muted); max-width: 32em; }
   .step .who { font-size: .85rem; color: var(--green-2); }
 
+  /* Section: membership. Two ways in, side by side, divided by a hairline. No prices, no cards. */
+  .member { background: var(--stone); padding: 96px 0; }
+  .member-head { display: grid; gap: 18px; margin-bottom: 56px; }
+  .member-head h2 { font: 400 clamp(2rem, 5.6vw, 3.1rem)/1.14 var(--serif); letter-spacing: -.015em; margin: 0; color: var(--green); max-width: 14em; }
+  .member-head p { margin: 14px 0 0; color: var(--muted); max-width: 32em; }
+  .tiers { display: grid; border-top: 1px solid var(--line); }
+  .tier { padding: 36px 0; display: grid; gap: 10px; align-content: start; }
+  .tier + .tier { border-top: 1px solid var(--line); }
+  .tier h3 { margin: 0; font: 400 1.9rem/1.15 var(--serif); color: var(--green); }
+  .tier .sub { font-size: .72rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .tier ul { list-style: none; margin: 16px 0 0; padding: 0; }
+  .tier li { padding: 11px 0; border-top: 1px solid var(--line); }
+  .member-foot { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; }
+  .member-foot span { font-size: .9rem; color: var(--muted); }
+
   @media (min-width: 900px) {
     :root { --gutter: 56px; }
     .hero { padding: 88px 0 136px; }
@@ -117,6 +132,12 @@
     .path { padding: 152px 0; }
     .path-head { grid-template-columns: 1fr 2fr; align-items: end; }
     .timeline { margin-left: 33.333%; }
+    .member { padding: 152px 0; }
+    .member-head { grid-template-columns: 1fr 2fr; align-items: end; }
+    .tiers { grid-template-columns: 1fr 1fr; margin-left: 33.333%; }
+    .tier { padding: 40px 40px 0 0; }
+    .tier + .tier { border-top: 0; border-left: 1px solid var(--line); padding-left: 40px; }
+    .member-foot { margin-left: 33.333%; }
     .timeline::before { left: 165px; }
     .step { grid-template-columns: 160px 1fr; column-gap: 40px; padding-left: 0; }
     .step::before { left: 161px; }
@@ -223,7 +244,7 @@
         <li class="step">
           <span class="when">Woche 3 bis 12</span>
           <h3>Laufende Begleitung</h3>
-          <p>Unser Care-Team ist für dich da, wenn Fragen aufkommen. Du hältst fest, wie es dir geht, und wir passen an, wo es nötig ist.</p>
+          <p>Unser Care-Team mit Ernährungsberatung und Training ist für dich da, wenn Fragen aufkommen. Du hältst fest, wie es dir geht, und wir passen an, wo es nötig ist.</p>
         </li>
         <li class="step">
           <span class="when">Monat 3</span>
@@ -231,6 +252,44 @@
           <p>Deine Ärztin schaut mit dir auf die letzten Wochen und entscheidet mit dir, wie es weitergeht. Danach seht ihr euch mindestens einmal im Jahr.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section class="member" aria-labelledby="member-h">
+    <div class="wrap">
+      <div class="member-head">
+        <span class="label">Mitgliedschaft</span>
+        <div>
+          <h2 id="member-h">Eine Begleitung, die bleibt.</h2>
+          <p>Statt einzelner Termine wirst du Mitglied. Ärztliche Begleitung, Care-Team, Ernährung und Training greifen ineinander.</p>
+        </div>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <span class="sub">Bald bundesweit</span>
+          <h3>Digital</h3>
+          <ul>
+            <li>Ärztliche Termine per Video an den wichtigen Punkten</li>
+            <li>Care-Team für deine Fragen zwischendurch</li>
+            <li>Ernährungsberatung und Training online</li>
+            <li>Dein Plan und dein Verlauf an einem Ort</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <span class="sub">Mit Zugang zum Space</span>
+          <h3>Berlin</h3>
+          <ul>
+            <li>Alles aus der digitalen Mitgliedschaft</li>
+            <li>Termine bei deiner Ärztin vor Ort</li>
+            <li>Pilates und Kraftraum im Space</li>
+            <li>Die Lounge als Ort für dich</li>
+          </ul>
+        </div>
+      </div>
+      <div class="member-foot">
+        <a class="btn" href="#anfrage">Erstgespräch anfragen</a>
+        <span>Die Plätze sind begrenzt. Konditionen erfährst du im Erstgespräch.</span>
+      </div>
     </div>
   </section>
 </main>
