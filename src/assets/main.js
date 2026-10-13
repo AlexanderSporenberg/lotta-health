@@ -27,6 +27,84 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Demo checkout: preselect the plan from the hash, mirror it in the summary, fake the payment.
+  var co = document.querySelector("[data-checkout]");
+  if (co) {
+    var form = co.querySelector("form");
+    var sync = function () {
+      var r = form.querySelector("input[name=plan]:checked");
+      co.querySelector("[data-sum-name]").textContent = r.dataset.name;
+      co.querySelector("[data-sum-price]").textContent = r.dataset.price;
+      co.querySelector("[data-sum-note]").textContent = r.dataset.note;
+    };
+    var pre = form.querySelector('input[value="' + location.hash.slice(1) + '"]');
+    if (pre) pre.checked = true;
+    sync();
+    form.addEventListener("change", sync);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var btn = form.querySelector(".checkout-btn");
+      btn.disabled = true;
+      btn.textContent = "Wird verarbeitet …";
+      setTimeout(function () {
+        form.hidden = true;
+        co.querySelector(".checkout-summary").hidden = true;
+        var done = co.querySelector(".checkout-done");
+        done.hidden = false;
+        done.querySelector("h2").setAttribute("tabindex", "-1");
+        done.querySelector("h2").focus();
+      }, 900);
+    });
+  }
+
+  // Demo shop: filter chips and an in-memory cart. Nothing is stored or sent.
+  var shop = document.querySelector("[data-shop]");
+  if (shop) {
+    var cart = {};
+    var euro = function (n) { return n.toFixed(2).replace(".", ",").replace(",00", "") + " €"; };
+    var render = function () {
+      var list = shop.querySelector("[data-cart-list]");
+      var ids = Object.keys(cart);
+      var sum = 0;
+      list.innerHTML = ids.map(function (id) {
+        var it = cart[id]; sum += it.price * it.qty;
+        return '<li><span>' + it.qty + " × " + it.name + '</span><span>' + euro(it.price * it.qty) +
+          '</span><button type="button" class="cart-x" data-remove="' + id + '" aria-label="' + it.name + ' entfernen">×</button></li>';
+      }).join("");
+      var ship = sum > 0 && sum < 50 ? 4.9 : 0;
+      shop.querySelector("[data-cart-empty]").hidden = ids.length > 0;
+      shop.querySelector("[data-cart-total]").hidden = !ids.length;
+      shop.querySelector("[data-cart-ship]").hidden = !ids.length;
+      shop.querySelector("[data-cart-sum]").textContent = euro(sum + ship) + (ship ? " inkl. Versand" : "");
+      shop.querySelector("[data-cart-checkout]").disabled = !ids.length;
+    };
+    shop.addEventListener("click", function (e) {
+      var add = e.target.closest("[data-add]");
+      var rem = e.target.closest("[data-remove]");
+      var f = e.target.closest("[data-filter]");
+      if (add) {
+        var id = add.dataset.add;
+        cart[id] = cart[id] || { name: add.dataset.name, price: parseFloat(add.dataset.price), qty: 0 };
+        cart[id].qty += 1;
+        shop.querySelector("[data-cart-done]").hidden = true;
+        add.textContent = "Hinzugefügt";
+        setTimeout(function () { add.textContent = "In den Warenkorb"; }, 1200);
+        render();
+      } else if (rem) {
+        delete cart[rem.dataset.remove];
+        render();
+      } else if (f) {
+        shop.querySelectorAll("[data-filter]").forEach(function (b) { b.classList.toggle("on", b === f); b.setAttribute("aria-pressed", b === f); });
+        shop.querySelectorAll(".product").forEach(function (p) { p.hidden = f.dataset.filter !== "alle" && p.dataset.cat !== f.dataset.filter; });
+      } else if (e.target.closest("[data-cart-checkout]")) {
+        cart = {};
+        render();
+        shop.querySelector("[data-cart-done]").hidden = false;
+      }
+    });
+  }
+
   // Waitlist forms. TODO: connect to the newsletter tool once chosen.
   document.querySelectorAll("form[data-waitlist]").forEach(function (form) {
     form.addEventListener("submit", function (ev) {
@@ -158,7 +236,7 @@
         (sums.seele / max.seele >= 0.6 ? '<p><strong>Wenn du Gedanken hast, nicht mehr leben zu wollen:</strong> Bitte hol dir sofort Hilfe, über die 112 oder die Telefonseelsorge 0800 111 0 111 (kostenfrei, rund um die Uhr).</p>' : "") +
         '<p class="muted">Stand: ' + new Date().toLocaleDateString("de-DE") + "</p>" +
         '<p class="note">Dieser Check ist eine Orientierung und keine Diagnose. Deine Antworten bleiben in deinem Browser und werden nicht gespeichert oder übertragen. Bei starken, neuen oder ungewöhnlichen Beschwerden (zum Beispiel Blutungen nach der Menopause) geh bitte zeitnah in eine Praxis.</p>' +
-        '<div class="btn-row"><a class="btn" href="ablauf.html#navigation-session">So geht es weiter</a>' +
+        '<div class="btn-row"><a class="btn" href="checkout.html#navigation">Navigation Session buchen</a><a class="btn btn-ghost" href="ablauf.html#navigation-session">So geht es weiter</a>' +
         '<button type="button" class="btn btn-ghost" data-print>Drucken oder als PDF speichern</button>' +
         '<button type="button" class="btn btn-ghost" data-restart>Check neu starten</button></div>';
       root.scrollIntoView({ block: "start" });
