@@ -1,0 +1,74 @@
+<!-- title: Buchen · Lotta Health | description: Navigation Session oder Mitgliedschaft buchen. Demo ohne echte Zahlung. | nav: home -->
+<section class="page-hero checkout-hero">
+  <div class="wrap">
+    <p class="demo-banner" role="note"><b>Demo.</b> Hier findet keine echte Zahlung statt. Preise sind Beispielpreise.</p>
+    <span class="eyebrow">Buchen</span>
+    <h1>Fast geschafft.</h1>
+  </div>
+</section>
+
+<section class="section checkout-section">
+  <div class="wrap checkout" data-checkout>
+    <form class="checkout-form" novalidate>
+      <fieldset class="plan-pick">
+        <legend>Was möchtest du buchen?</legend>
+        <label class="plan-opt" id="navigation">
+          <input type="radio" name="plan" value="navigation" data-name="Navigation Session" data-price="290 €" data-note="einmalig" checked>
+          <span><b>Navigation Session</b><small>Ärztliches Erstgespräch, Fragebogen, Labor und dein Plan</small></span>
+          <em>290 €<small>einmalig</small></em>
+        </label>
+        <label class="plan-opt" id="digital">
+          <input type="radio" name="plan" value="digital" data-name="Lotta Digital" data-price="89 € pro Monat" data-note="12 Monate Laufzeit">
+          <span><b>Lotta Digital</b><small>Ärztin per Video, Care-Team, Lotte und dein Plan in der App</small></span>
+          <em>89 €<small>pro Monat</small></em>
+        </label>
+        <label class="plan-opt" id="berlin">
+          <input type="radio" name="plan" value="berlin" data-name="Lotta mit Showroom" data-price="189 € pro Monat" data-note="12 Monate Laufzeit">
+          <span><b>Lotta mit Showroom</b><small>Alles aus Digital, dazu Termine und Training vor Ort in Berlin</small></span>
+          <em>189 €<small>pro Monat</small></em>
+        </label>
+      </fieldset>
+
+      <div class="field-grid">
+        <label>Vorname und Nachname<input type="text" name="name" autocomplete="name" required></label>
+        <label>E-Mail<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+
+      <div class="pay-box" aria-label="Zahlungsart, Demo">
+        <p class="pay-title">Zahlung</p>
+        <div class="pay-methods"><span class="on">Karte</span><span>SEPA-Lastschrift</span><span>Apple Pay</span></div>
+        <div class="pay-fake" aria-hidden="true"><span>4242 4242 4242 4242</span><span>12 / 34</span><span>123</span></div>
+        <p class="muted small">In der Demo werden keine Zahlungsdaten abgefragt oder gespeichert.</p>
+      </div>
+
+      <label class="consent"><input type="checkbox" required> Ich habe die Vertragsbedingungen und die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen.</label>
+      <button class="btn btn-lg checkout-btn" type="submit">Zahlungspflichtig buchen</button>
+      <p class="form-msg" role="status" hidden></p>
+    </form>
+
+    <aside class="checkout-summary" aria-live="polite">
+      <p class="eyebrow">Deine Auswahl</p>
+      <p class="sum-name" data-sum-name>Navigation Session</p>
+      <p class="sum-price" data-sum-price>290 €</p>
+      <p class="muted" data-sum-note>einmalig</p>
+      <ul class="checklist">
+        <li>Termin online oder vor Ort in Berlin</li>
+        <li>Ärztlich geführt, ohne Heilversprechen</li>
+        <li>Kündigung zum Ende der Laufzeit</li>
+      </ul>
+      <p class="muted small">Alle Preise inklusive Umsatzsteuer, soweit sie anfällt. <span class="todo">Echte Preise, Laufzeiten, AGB und Widerrufsbelehrung ergänzen</span></p>
+    </aside>
+
+    <div class="checkout-done" hidden>
+      <span class="eyebrow">Demo abgeschlossen</span>
+      <h2>Danke. So würde es weitergehen.</h2>
+      <ol class="next-steps">
+        <li><b>1</b>Du bekommst eine Bestätigung per E-Mail</li>
+        <li><b>2</b>Wir schicken dir den Fragebogen</li>
+        <li><b>3</b>Du wählst deinen Termin für die Navigation Session</li>
+      </ol>
+      <p class="muted">Es wurde nichts bezahlt und nichts gespeichert.</p>
+      <a class="btn btn-ghost" href="index.html">Zur Startseite</a>
+    </div>
+  </div>
+</section>
