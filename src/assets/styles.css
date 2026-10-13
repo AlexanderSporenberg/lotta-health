@@ -964,3 +964,10 @@ body { font-size: 17.5px; }
 .shop-legal { margin-top: 28px; }
 .demo-banner { display: table; }
 .product-foot b, .product-foot .btn { white-space: nowrap; }
+
+/* Checkout and shop: hero sits close to the content below it. */
+.checkout-hero { padding-bottom: 8px; }
+.checkout-section, .shop-section { padding-top: 32px; }
+.shop-hero { padding-bottom: 8px; }
+.checkout input[type="radio"], .checkout input[type="checkbox"] { accent-color: var(--plum); }
+@media (max-width: 640px) { .product-art { aspect-ratio: 16 / 9; } }

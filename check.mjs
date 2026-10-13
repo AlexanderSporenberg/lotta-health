@@ -20,7 +20,7 @@ const problems = [];
 for (const page of pages) {
   for (const [, ref] of html[page].matchAll(/\s(?:href|src)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|tel:|data:)/.test(ref)) continue;
-    const [file, anchor] = ref.split("#");
+    const [file, anchor] = ref.replace(/\?[^#]*/, "").split("#");
     const target = file || page;
     if (!existsSync(join(dist, target))) problems.push(`${page}: broken link ${ref}`);
     else if (anchor && target.endsWith(".html") && !ids[target]?.has(anchor))
