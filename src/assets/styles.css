@@ -879,3 +879,22 @@ body { font-size: 17.5px; }
 @media (max-width: 960px) { .showroom-grid { grid-template-columns: 1fr; gap: 32px; } }
 @media (min-width: 861px) { section.hero { padding-bottom: 130px; } .hero-talk .talk-lotte { bottom: -70px; } }
 @media (max-width: 860px) { section.hero .hero-copy { padding-bottom: 0; } section.hero .wrap { gap: 28px; } }
+
+/* Strategy round 2026-10-13: life phases, care team note, membership, Lotte in the app */
+.programs { margin-top: 48px; display: grid; gap: 28px; align-items: center; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
+.programs h3 { margin: 0 0 10px; }
+.programs p { margin: 0; }
+.program-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.program-list li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; background: var(--sage-soft); }
+.program-list li b { font-weight: 500; }
+.program-list li span { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.program-list li.now { background: var(--apricot-soft); }
+.program-list li.now span { opacity: 1; }
+@media (min-width: 860px) { .programs { grid-template-columns: 1fr 1fr; gap: 48px; padding: 44px; } }
+.journey-note { max-width: 640px; margin: 36px auto 0; text-align: center; }
+.member-grid { align-items: stretch; }
+.card.member h3 { margin-top: 0; }
+.card.member.berlin { background: var(--sage-soft); }
+.member-note { margin-top: 28px; }
+.app-lotte { margin: 0 0 22px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.08); }
+@media (max-width: 720px) { .member-grid { grid-template-columns: 1fr; } }
