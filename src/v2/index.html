@@ -87,6 +87,21 @@
   .goal-body li { padding: 10px 0; border-top: 1px solid var(--line-dark); color: var(--on-dark); }
   @media (prefers-reduced-motion: reduce) { .goal summary::after { transition: none; } }
 
+  /* Section 4: the first 90 days as a quiet vertical timeline. Fine line, small dots, time on the left. */
+  .path { padding: 96px 0; }
+  .path-head { display: grid; gap: 18px; margin-bottom: 56px; }
+  .path-head h2 { font: 400 clamp(2rem, 5.6vw, 3.1rem)/1.14 var(--serif); letter-spacing: -.015em; margin: 0; color: var(--green); max-width: 14em; }
+  .path-head p { margin: 0; color: var(--muted); max-width: 30em; }
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+  .step { position: relative; padding: 0 0 44px 36px; display: grid; gap: 6px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before { content: ""; position: absolute; left: 1px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--ivory); border: 1px solid var(--green); }
+  .step .when { font-size: .72rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .step h3 { margin: 0; font: 400 1.5rem/1.2 var(--serif); color: var(--green); }
+  .step p { margin: 4px 0 0; color: var(--muted); max-width: 32em; }
+  .step .who { font-size: .85rem; color: var(--green-2); }
+
   @media (min-width: 900px) {
     :root { --gutter: 56px; }
     .hero { padding: 88px 0 136px; }
@@ -99,6 +114,14 @@
     .goal .num { grid-row: 1 / span 2; }
     .goal h3, .goal .voice { grid-column: 2; }
     .goal-body { grid-template-columns: 1fr 1fr; margin-left: 33.333%; gap: 48px; padding-bottom: 48px; }
+    .path { padding: 152px 0; }
+    .path-head { grid-template-columns: 1fr 2fr; align-items: end; }
+    .timeline { margin-left: 33.333%; }
+    .timeline::before { left: 165px; }
+    .step { grid-template-columns: 160px 1fr; column-gap: 40px; padding-left: 0; }
+    .step::before { left: 161px; }
+    .step .when { padding-top: 4px; text-align: right; padding-right: 20px; grid-row: 1 / span 3; }
+    .step h3, .step p { grid-column: 2; }
   }
 </style>
 </head>
@@ -175,6 +198,39 @@
           </div>
         </details>
       </div>
+    </div>
+  </section>
+
+  <section class="path" aria-labelledby="path-h">
+    <div class="wrap">
+      <div class="path-head">
+        <span class="label">So begleiten wir dich</span>
+        <div>
+          <h2 id="path-h">Die ersten 90 Tage.</h2>
+        </div>
+      </div>
+      <ol class="timeline">
+        <li class="step">
+          <span class="when">Woche 0</span>
+          <h3>Erstgespräch</h3>
+          <p>Deine Ärztin nimmt sich Zeit für deine Geschichte, deine Fragen und das, was du dir wünschst. Danach folgt die Diagnostik.</p>
+        </li>
+        <li class="step">
+          <span class="when">Woche 2</span>
+          <h3>Analyse und dein Plan</h3>
+          <p>Ihr besprecht deine Ergebnisse gemeinsam. Du bekommst einen persönlichen Plan, schriftlich und verständlich.</p>
+        </li>
+        <li class="step">
+          <span class="when">Woche 3 bis 12</span>
+          <h3>Laufende Begleitung</h3>
+          <p>Unser Care-Team ist für dich da, wenn Fragen aufkommen. Du hältst fest, wie es dir geht, und wir passen an, wo es nötig ist.</p>
+        </li>
+        <li class="step">
+          <span class="when">Monat 3</span>
+          <h3>Gemeinsamer Rückblick</h3>
+          <p>Deine Ärztin schaut mit dir auf die letzten Wochen und entscheidet mit dir, wie es weitergeht. Danach seht ihr euch mindestens einmal im Jahr.</p>
+        </li>
+      </ol>
     </div>
   </section>
 </main>
