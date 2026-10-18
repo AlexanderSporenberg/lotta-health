@@ -1,4 +1,4 @@
-// Lotta Health: small progressive enhancements. Nothing here sends data anywhere.
+// Lika Health: small progressive enhancements. Nothing here sends data anywhere.
 (function () {
   if (/[?&]review/.test(location.search)) document.documentElement.classList.add("review");
   "use strict";
@@ -216,7 +216,7 @@
       var headline, text;
       if (share >= 0.5) {
         headline = "Deine Beschwerden belasten dich deutlich.";
-        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lotta Navigation Session. Speichere dir diese Auswertung und nimm sie mit.";
+        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lika Navigation Session. Speichere dir diese Auswertung und nimm sie mit.";
       } else if (share >= 0.2) {
         headline = "Du spürst einige typische Veränderungen.";
         text = "Viele Frauen erleben genau das. Mit guter ärztlicher Einordnung, Schlaf, Training und den passenden Routinen lässt sich oft viel bewegen. In der Navigation Session finden wir heraus, wo du ansetzt.";

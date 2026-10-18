@@ -1,4 +1,4 @@
-/* Lotta Health: design tokens */
+/* Lika Health: design tokens */
 :root {
   --plum: #3a2340;
   --plum-soft: #5b3f61;
@@ -1188,3 +1188,25 @@ h3 { font-size: 1.55rem; line-height: 1.15; }
 @media (max-width: 899px) { .rl-hero-visual .photo { min-height: 360px; } .rl-hero-visual { margin-bottom: 24px; } }
 .photo img { position: absolute; inset: 0; }
 body:has(.final) .site-footer { margin-top: 0; }
+.hero-photo img { object-position: 30% 60%; }
+@media (min-width: 900px) { .rl-hero-visual .circle-card { left: auto; right: -36px; top: -36px; bottom: auto; width: 230px; } }
+
+/* Mix 2026-10-18: relaunch structure with the warmth of the first design */
+:root { --serif: "Fraunces", Georgia, serif; --r: 22px; }
+h1, h2, h3 { font-weight: 400; letter-spacing: -0.02em; }
+h1 em, h2 em { font-style: italic; color: var(--bordeaux); }
+.wordmark { font-weight: 500; font-size: 1.7rem; }
+.photo, .way, .tier, .lever, .topics, .example-plan { border-radius: var(--r); }
+.photo { box-shadow: 0 18px 40px rgba(43, 33, 30, 0.08); }
+.way, .tier { box-shadow: 0 10px 30px rgba(43, 33, 30, 0.06); }
+.topics { overflow: hidden; }
+.topic-ico, .way-ico { width: 64px; height: 64px; margin-bottom: 18px; }
+.way.dark .way-ico { background: var(--cream); border-radius: 50%; padding: 6px; }
+.rl-steps li::before { font-style: italic; }
+.bg-paper { background: #EFE8DC; }
+.hero-sola { position: absolute; left: 14px; top: 16px; display: flex; gap: 10px; align-items: flex-end; max-width: 250px; }
+.hero-sola img { flex: 0 0 44px; }
+.hero-sola p { margin: 0; background: var(--cream); border-radius: 18px 18px 18px 6px; padding: 10px 14px; font-size: 0.88rem; line-height: 1.4; box-shadow: 0 10px 24px rgba(43, 33, 30, 0.12); }
+.hero-sola b { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bordeaux); }
+@media (min-width: 900px) { .hero-sola { left: -40px; top: auto; bottom: 48px; } }
+@media (max-width: 899px) { .hero-sola { display: none; } }
