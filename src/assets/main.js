@@ -14,6 +14,10 @@
     });
   }
 
+  // Hero variant B for review: ?hero=b
+  var heroH = document.querySelector("[data-hero-b]");
+  if (heroH && /[?&]hero=b/.test(location.search)) heroH.textContent = heroH.getAttribute("data-hero-b");
+
   // Reveal on scroll
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
@@ -116,7 +120,7 @@
     });
   });
 
-  // Symptom check ("Frag Lotte")
+  // Symptom check ("Frag Sola")
   var root = document.getElementById("check");
   if (root) symptomCheck(root);
 
