@@ -1,4 +1,4 @@
-// Lotta Health: small progressive enhancements. Nothing here sends data anywhere.
+// Lika Health: small progressive enhancements. Nothing here sends data anywhere.
 (function () {
   if (/[?&]review/.test(location.search)) document.documentElement.classList.add("review");
   "use strict";
@@ -11,6 +11,26 @@
       var open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("open", !open);
+    });
+  }
+
+  // Hero variant B for review: ?hero=b
+  var heroH = document.querySelector("[data-hero-b]");
+  if (heroH && /[?&]hero=b/.test(location.search)) heroH.textContent = heroH.getAttribute("data-hero-b");
+
+  // Circle view toggle: after the check vs. with the doctor
+  var circleToggle = document.querySelector(".circle-toggle");
+  var circleBox = document.querySelector("[data-circle]");
+  if (circleToggle && circleBox) {
+    circleToggle.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-view]");
+      if (!btn) return;
+      var view = btn.getAttribute("data-view");
+      circleToggle.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+      circleBox.classList.toggle("is-check", view === "check");
+      document.querySelectorAll("[data-check][data-care]").forEach(function (el) {
+        el.textContent = el.getAttribute("data-" + view);
+      });
     });
   }
 
@@ -116,7 +136,7 @@
     });
   });
 
-  // Symptom check ("Frag Lotte")
+  // Symptom check ("Frag Sola")
   var root = document.getElementById("check");
   if (root) symptomCheck(root);
 
@@ -212,7 +232,7 @@
       var headline, text;
       if (share >= 0.5) {
         headline = "Deine Beschwerden belasten dich deutlich.";
-        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lotta Navigation Session. Speichere dir diese Auswertung und nimm sie mit.";
+        text = "Das musst du nicht aushalten. Lass deine Beschwerden ärztlich einordnen, bei deiner Gynäkologin oder in einer Lika Navigation Session. Speichere dir diese Auswertung und nimm sie mit.";
       } else if (share >= 0.2) {
         headline = "Du spürst einige typische Veränderungen.";
         text = "Viele Frauen erleben genau das. Mit guter ärztlicher Einordnung, Schlaf, Training und den passenden Routinen lässt sich oft viel bewegen. In der Navigation Session finden wir heraus, wo du ansetzt.";
