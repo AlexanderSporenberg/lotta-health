@@ -18,6 +18,22 @@
   var heroH = document.querySelector("[data-hero-b]");
   if (heroH && /[?&]hero=b/.test(location.search)) heroH.textContent = heroH.getAttribute("data-hero-b");
 
+  // Circle view toggle: after the check vs. with the doctor
+  var circleToggle = document.querySelector(".circle-toggle");
+  var circleBox = document.querySelector("[data-circle]");
+  if (circleToggle && circleBox) {
+    circleToggle.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-view]");
+      if (!btn) return;
+      var view = btn.getAttribute("data-view");
+      circleToggle.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+      circleBox.classList.toggle("is-check", view === "check");
+      document.querySelectorAll("[data-check][data-care]").forEach(function (el) {
+        el.textContent = el.getAttribute("data-" + view);
+      });
+    });
+  }
+
   // Reveal on scroll
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {

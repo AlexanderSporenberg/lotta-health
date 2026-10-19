@@ -65,8 +65,8 @@
       <h2 id="ablauf-h">Vier Schritte zu deinem Plan.</h2>
     </div>
     <ol class="rl-steps">
-      <li class="reveal"><h3>Check</h3><p>Kurzer Test online, dein persönlicher FemBioIndex.</p></li>
-      <li class="reveal"><h3>Labor &amp; Ärztin</h3><p>Wir schauen genau hin. Basislabor und ein ausführliches Gespräch mit deiner Ärztin.</p></li>
+      <li class="reveal"><h3>Check</h3><p>Rund 10 Minuten online: Zyklus, Energie, Schlaf, Stress, Stoffwechsel, Haut und Stimmung. Daraus entsteht dein FemBioIndex.</p></li>
+      <li class="reveal"><h3>Labor &amp; Ärztin</h3><p>Wir schauen genau hin. In Care mit Basislabor und deiner Ärztin, in Essentials optional mit einem Labor-Heimtest.</p></li>
       <li class="reveal"><h3>Dein Circle</h3><p>Wo du stehst und deine drei wichtigsten Hebel.</p></li>
       <li class="reveal"><h3>Begleitung &amp; Recheck</h3><p>App, Care-Team, messbarer Fortschritt.</p></li>
     </ol>
@@ -76,14 +76,19 @@
 <section class="rl circle-section" id="circle" aria-labelledby="circle-h">
   <div class="wrap">
     <div class="circle-grid">
-      <div class="circle reveal"><svg viewBox="-120 -120 240 240" role="img" aria-labelledby="cm-t"><title id="cm-t">Beispiel-Circle: innerer Ring Kernsysteme, äußerer Ring Lebensbereiche, in der Mitte deine drei Hebel</title><circle class="track" r="92" stroke-width="15"/><circle class="track" r="66" stroke-width="15"/><circle class="seg s1 st-blick" r="66" stroke-width="15" pathLength="100" transform="rotate(-86)"><title>Energie & Erholung</title></circle><circle class="seg s2 st-fokus" r="66" stroke-width="15" pathLength="100" transform="rotate(4)"><title>Entzündung & Reaktivität</title></circle><circle class="seg s3 st-stark" r="66" stroke-width="15" pathLength="100" transform="rotate(94)"><title>Zyklus & Hormone</title></circle><circle class="seg s4 st-blick" r="66" stroke-width="15" pathLength="100" transform="rotate(184)"><title>Stoffwechsel</title></circle><circle class="seg o1 st-stark" r="92" stroke-width="15" pathLength="100" transform="rotate(-86)"><title>Herz & Gefäße</title></circle><circle class="seg o2 st-fokus" r="92" stroke-width="15" pathLength="100" transform="rotate(4)"><title>Knochen & Muskeln</title></circle><circle class="seg o3 st-blick" r="92" stroke-width="15" pathLength="100" transform="rotate(94)"><title>Kopf & Stimmung</title></circle><circle class="seg o4 st-fokus" r="92" stroke-width="15" pathLength="100" transform="rotate(184)"><title>Schlaf</title></circle><text class="c-small" y="-20">Deine 3 Hebel</text><text class="c-label" y="-2" font-size="11">Schlaf stabilisieren</text><text class="c-label" y="13" font-size="11">Muskeln aufbauen</text><text class="c-label" y="28" font-size="11">Entzündung senken</text></svg></div>
+      <div class="circle reveal" data-circle><svg viewBox="-120 -120 240 240" role="img" aria-labelledby="cm-t"><title id="cm-t">Beispiel-Circle: innerer Ring Kernsysteme, äußerer Ring Lebensbereiche, in der Mitte deine drei Hebel</title><circle class="track" r="92" stroke-width="15"/><circle class="track" r="66" stroke-width="15"/><circle class="seg s1 st-blick" r="66" stroke-width="15" pathLength="100" transform="rotate(-86)"><title>Energie & Erholung</title></circle><circle class="seg s2 st-fokus" r="66" stroke-width="15" pathLength="100" transform="rotate(4)"><title>Entzündung & Reaktivität</title></circle><circle class="seg s3 st-stark" r="66" stroke-width="15" pathLength="100" transform="rotate(94)"><title>Zyklus & Hormone</title></circle><circle class="seg s4 st-blick" r="66" stroke-width="15" pathLength="100" transform="rotate(184)"><title>Stoffwechsel</title></circle><circle class="seg o1 st-stark chk-open" r="92" stroke-width="15" pathLength="100" transform="rotate(-86)"><title>Herz & Gefäße</title></circle><circle class="seg o2 st-fokus chk-open" r="92" stroke-width="15" pathLength="100" transform="rotate(4)"><title>Knochen & Muskeln</title></circle><circle class="seg o3 st-blick" r="92" stroke-width="15" pathLength="100" transform="rotate(94)"><title>Kopf & Stimmung</title></circle><circle class="seg o4 st-fokus" r="92" stroke-width="15" pathLength="100" transform="rotate(184)"><title>Schlaf</title></circle><text class="c-small" y="-20">Deine 3 Hebel</text><text class="c-label" y="-2" font-size="11">Schlaf stabilisieren</text><text class="c-label" y="13" font-size="11">Muskeln aufbauen</text><text class="c-label" y="28" font-size="11">Entzündung senken</text></svg></div>
       <div>
         <span class="eyebrow">Dein Circle</span>
         <h2 id="circle-h">Wo du stehst. Auf einen Blick.</h2>
+        <div class="circle-toggle" role="group" aria-label="Circle-Ansicht">
+          <button type="button" data-view="check" aria-pressed="false">Nach dem Check</button>
+          <button type="button" data-view="care" aria-pressed="true">Mit deiner Ärztin</button>
+        </div>
         <ul class="legend">
           <li><i class="l-stark"></i>stark</li>
           <li><i class="l-blick"></i>im Blick</li>
           <li><i class="l-fokus"></i>dein Fokus</li>
+          <li><i class="l-open"></i>noch offen</li>
         </ul>
         <div class="rings">
           <div>
@@ -98,17 +103,17 @@
           </div>
           <div>
             <h3>Äußerer Kreis</h3>
-            <p>Deine Lebensbereiche. Basislabor und Arztgespräch füllen ihn.</p>
+            <p>Deine Lebensbereiche. Der Check zeigt Schlaf und Kopf vorläufig, Basislabor und Ärztin machen ihn vollständig.</p>
             <ul>
-              <li>Herz &amp; Gefäße <span>stark</span></li>
-              <li>Knochen &amp; Muskeln <span>dein Fokus</span></li>
+              <li>Herz &amp; Gefäße <span data-check="noch offen" data-care="stark">stark</span></li>
+              <li>Knochen &amp; Muskeln <span data-check="noch offen" data-care="dein Fokus">dein Fokus</span></li>
               <li>Kopf &amp; Stimmung <span>im Blick</span></li>
               <li>Schlaf <span>dein Fokus</span></li>
             </ul>
           </div>
         </div>
         <p class="circle-msg">Der Check zeigt dir den inneren Kreis. Deine Ärztin macht ihn vollständig.</p>
-        <p class="muted small">In der Mitte stehen deine 3 Hebel. Nach dem Check sind sie vorläufig, nach dem Gespräch mit deiner Ärztin bestätigt.</p>
+        <p class="muted small">In der Mitte stehen deine 3 Hebel: dein stärkstes System, ein weiteres relevantes Thema und ein Lebensstil-Hebel. Hebel sind Prioritäten, keine Produkte. In Care sind sie nach dem Check vorläufig und werden im Gespräch mit deiner Ärztin bestätigt.</p>
       </div>
     </div>
 
@@ -144,17 +149,41 @@
         </details>
       </div>
       <ol class="timeline">
-        <li><b>Woche 1</b><span>Startgespräch, Basislabor, dein Circle</span></li>
-        <li><b>Woche 2 bis 4</b><span>Plan in der App, erste Routinen, Care-Team</span></li>
-        <li><b>Monat 2</b><span>Feinabstimmung mit deiner Ärztin</span></li>
-        <li><b>Monat 3</b><span>Recheck: was sich verändert hat, was als Nächstes kommt</span></li>
+        <li><b>Woche 1</b><span>Check, Startgespräch, Basislabor, dein Circle</span></li>
+        <li><b>Woche 2 bis 12</b><span>Plan in der App, erste Routinen, Care-Team</span></li>
+        <li><b>Monat 3</b><span>Check-in mit deiner Ärztin</span></li>
+        <li><b>Monat 6</b><span>Recheck: dein Circle im Vorher-Nachher-Vergleich</span></li>
+        <li><b>Monat 12</b><span>Jahrescheck mit Basislabor</span></li>
       </ol>
       <p class="muted small">Beispielhafter Plan zur Veranschaulichung. Dein Plan entsteht individuell aus Check, Labor und ärztlichem Gespräch.</p>
     </details>
   </div>
 </section>
 
-<section class="rl bg-paper" aria-labelledby="plan-h">
+<section class="rl bg-paper" id="labor" aria-labelledby="labor-h">
+  <div class="wrap">
+    <div class="rl-head">
+      <span class="eyebrow">Labor</span>
+      <h2 id="labor-h">Labor, das dein Bild schärft.</h2>
+      <p>Dein FemBioIndex funktioniert auch ohne Laborwerte. Mit Labor wird er genauer. Wir ordnen Werte ein, statt sie allein entscheiden zu lassen, und deine Ärztin befundet sie.</p>
+    </div>
+    <div class="labs">
+      <div class="lab reveal">
+        <span class="eyebrow">Essentials · optional</span>
+        <h3>Labor-Heimtest</h3>
+        <ul><li>Vitamin D</li><li>Ferritin (Eisenspeicher)</li><li>hsCRP (Entzündung)</li><li>Omega-3-Index</li><li>Nüchternglukose und Insulin</li></ul>
+      </div>
+      <div class="lab reveal">
+        <span class="eyebrow">Care · inklusive</span>
+        <h3>Basislabor</h3>
+        <ul><li>Alles aus dem Heimtest</li><li>HbA1c (Langzeitzucker)</li><li>Blutfette und ApoB</li><li>Schilddrüse (TSH)</li><li>Kleines Blutbild</li></ul>
+      </div>
+    </div>
+    <p class="muted small">Analysen über zertifizierte Labore. Zeigt ein Wert etwas Auffälliges, sagen wir es dir klar und empfehlen ein ärztliches Gespräch. <span class="todo">Umfang Basislabor final mit Labor und Preis abstimmen</span></p>
+  </div>
+</section>
+
+<section class="rl" aria-labelledby="plan-h">
   <div class="wrap">
     <div class="rl-head">
       <span class="eyebrow">Alles in einem Plan</span>
@@ -224,9 +253,11 @@
         <p class="price">Preis folgt</p>
         <ul>
           <li>Check und dein FemBioIndex</li>
+          <li>Dein Plan mit 3 Hebeln</li>
+          <li>Optionaler Labor-Heimtest</li>
           <li>Supplement-Box im Abo</li>
           <li>App mit Sola</li>
-          <li>Online-Recheck</li>
+          <li>Recheck nach 6 und 12 Monaten</li>
         </ul>
         <p class="start">Digital. Startet sofort.</p>
         <div class="btn-row"><a class="btn" href="symptom-check.html">Check starten</a></div>
@@ -237,15 +268,28 @@
         <p class="price">Preis folgt</p>
         <ul>
           <li>Basislabor</li>
-          <li>Feste Ärztin</li>
-          <li>Dein Circle und dein Plan</li>
+          <li>Feste Ärztin, die deinen Plan bestätigt</li>
+          <li>Dein vollständiger Circle</li>
           <li>Care-Team und App mit Sola</li>
           <li>Supplements</li>
-          <li>Rechecks</li>
+          <li>Check-in nach 3, Recheck nach 6, Jahrescheck nach 12 Monaten</li>
         </ul>
         <p class="start">Online oder vor Ort, zum gleichen Preis. Startet mit Startgespräch und Basislabor.</p>
         <div class="btn-row"><a class="btn" href="#start">Startgespräch anfragen</a></div>
       </article>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare">
+        <caption class="sr-only">Essentials und Care im Vergleich</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Essentials</th><th scope="col">Care</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Dein Plan</th><td>Aus deinem FemBioIndex</td><td>Vorgeschlagen vom FemBioIndex, bestätigt von deiner Ärztin</td></tr>
+          <tr><th scope="row">Labor</th><td>Optionaler Heimtest</td><td>Basislabor inklusive</td></tr>
+          <tr><th scope="row">Dein Circle</th><td>Innerer Kreis, dazu Schlaf und Kopf &amp; Stimmung</td><td>Alle acht Bereiche</td></tr>
+          <tr><th scope="row">Wenn etwas auffällt</th><td>Klare Empfehlung zum ärztlichen Gespräch, Termin bei uns möglich</td><td>Geht direkt an deine Ärztin</td></tr>
+          <tr><th scope="row">Rechecks</th><td>Nach 6 und 12 Monaten</td><td>Check-in nach 3, Recheck nach 6, Jahrescheck nach 12 Monaten</td></tr>
+        </tbody>
+      </table>
     </div>
     <div class="addons">
       <div>
@@ -265,6 +309,11 @@
       <span class="eyebrow">Shop</span>
       <h2 id="box-h">Deine Box.</h2>
       <p class="muted">Deine Supplements, abgestimmt auf deinen Check und dein Labor. Einmalig oder im Abo, nach jedem Recheck angepasst, jederzeit pausierbar.</p>
+      <ul class="principles">
+        <li>Ein Pack für deinen stärksten Hebel. Ein zweites nur, wenn es wirklich passt, nie mehr als zwei.</li>
+        <li>Ergänzungen wie Vitamin D oder Eisen nur, wenn dein Labor einen Mangel zeigt, und zeitlich begrenzt bis zum Recheck.</li>
+        <li>Wirkung mit möglichst wenig Komplexität.</li>
+      </ul>
       <ul class="extras"><li>Tee</li><li>Seidenmaske</li><li>Journal</li></ul>
       <div class="btn-row"><a class="btn btn-ghost" href="shop.html">Zum Shop</a></div>
     </div>
@@ -297,6 +346,22 @@
       <details>
         <summary>Ich bin gesetzlich versichert. Passt das trotzdem?</summary>
         <p>Ja. Die Mitgliedschaft ist eine Selbstzahlerleistung, du brauchst keine Überweisung.</p>
+      </details>
+      <details>
+        <summary>Entscheidet ein Algorithmus über meine Behandlung?</summary>
+        <p>Nein. Der FemBioIndex ordnet deine Antworten ein und schlägt Prioritäten vor. Er stellt keine Diagnosen und verordnet nichts. In Care bestätigt oder ändert deine Ärztin den Plan.</p>
+      </details>
+      <details>
+        <summary>Brauche ich Laborwerte?</summary>
+        <p>Nein, dein FemBioIndex funktioniert auch ohne. Laborwerte machen ihn genauer. In Essentials kannst du einen Heimtest dazunehmen, in Care ist das Basislabor enthalten.</p>
+      </details>
+      <details>
+        <summary>Ich bin schwanger, stille oder habe Kinderwunsch.</summary>
+        <p>Das fragen wir gleich zu Beginn des Checks. In Schwangerschaft und Stillzeit empfehlen wir keine Supplement-Packs und besprechen mit dir den nächsten Schritt. Bei Kinderwunsch passen wir den Plan darauf an.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn der Check etwas Auffälliges zeigt?</summary>
+        <p>Wir sagen es dir klar und empfehlen ein ärztliches Gespräch. In Essentials kannst du dafür einen Termin bei uns buchen, in Care geht der Hinweis direkt an deine Ärztin.</p>
       </details>
       <details>
         <summary>Was passiert mit meinen Befunden?</summary>
